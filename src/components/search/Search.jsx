@@ -1,13 +1,15 @@
 import { Box } from "@mui/material";
+import { useState } from "react";
 // import React, { useState } from "react";
 // import { useStyles } from "./style";
 
 const Search = () => {
   const [inputData, setInputData] = useState("");
 
-  const handleClick = (event) => {
-    setInputData(event.target.value);
-    console.log(event.target.value);
+  const handleClick = (e) => {
+    e.preventDefault();
+    // setInputData(e.target.value);
+    console.log(inputData);
   };
   return (
     <Box
@@ -30,10 +32,13 @@ const Search = () => {
             border: "none",
             borderRadius: "5px",
           }}
-          name="inputName"
+          //   name="inputName"
+          onChange={(e) => {
+            setInputData(e.target.value);
+          }}
           type="text"
         />
-        <input
+        <button
           style={{
             background: "#10B981",
             border: "none",
@@ -41,10 +46,10 @@ const Search = () => {
             borderRadius: "0px 5px 5px 0",
             padding: "10px",
           }}
-          type="button"
-          value="search"
-          onClick="handleClick(inputName.value)"
-        />
+          onClick={handleClick}
+        >
+          Search
+        </button>
       </form>
     </Box>
   );
