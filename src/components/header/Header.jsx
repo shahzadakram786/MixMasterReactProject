@@ -39,11 +39,15 @@ const Header = () => {
             >
               Home
             </Typography>
-            <Typography sx={{ cursor: "pointer" }} component={Link} to="about">
+            <Typography
+              sx={{ cursor: "pointer", textDecoration: "none", color: "black" }}
+              component={Link}
+              to="about"
+            >
               About
             </Typography>
             <Typography
-              sx={{ cursor: "pointer" }}
+              sx={{ cursor: "pointer", textDecoration: "none", color: "black" }}
               component={Link}
               to="ourNews"
             >
