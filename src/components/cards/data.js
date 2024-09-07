@@ -1,4 +1,5 @@
 // import { Box, Typography } from "@mui/material";
+import { Category } from "@mui/icons-material";
 import image1 from "../../assets/images/1mvjxg1504348579.jpg";
 import image2 from "../../assets/images/2x8thr1504816928.jpg";
 import image3 from "../../assets/images/52weey1606772672.jpg";
@@ -35,6 +36,10 @@ const UserData = [
     Type: "Alcoholic",
     Glassname: "Cocktail glass",
     Name: "A1",
+    Category: "Cocktail",
+    Ingredients: "Gin,Grand Marnier,Lemon Juice,Grenadine",
+    Instructions:
+      "Pour all ingredients into a cocktail shaker, mix and serve over ice into a chilled glass.",
   },
   {
     id: 2,

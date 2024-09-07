@@ -1,22 +1,21 @@
-import { Box } from "@mui/material";
-import { useState } from "react";
-// import React, { useState } from "react";
-// import { useStyles } from "./style";
+import React, { useState } from "react";
+import { Box, Button } from "@mui/material";
+import Cards from "../cards/Cards";
+import UserData from "../cards/data";
 
-const Search = () => {
-  const [inputData, setInputData] = useState("");
+const Search = ({ handleChange, handleClick }) => {
+  //   const filterData = (searchTerm) => {
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    // setInputData(e.target.value);
-    console.log(inputData);
-  };
+  // setFilteredData(filtered);
+  //   };
+
   return (
     <Box
       sx={{
         width: "100%",
         display: "flex",
-        justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center",
         background: "white",
         boxShadow: "1px 2px 8px rgba(0, 0, 0, 0.1)",
         padding: "30px",
@@ -32,13 +31,11 @@ const Search = () => {
             border: "none",
             borderRadius: "5px",
           }}
-          //   name="inputName"
-          onChange={(e) => {
-            setInputData(e.target.value);
-          }}
+          onChange={handleChange}
           type="text"
+          //   value={inputData}
         />
-        <button
+        <Button
           style={{
             background: "#10B981",
             border: "none",
@@ -49,8 +46,9 @@ const Search = () => {
           onClick={handleClick}
         >
           Search
-        </button>
+        </Button>
       </form>
+      {/* <Cards data={filtered} /> */}
     </Box>
   );
 };
