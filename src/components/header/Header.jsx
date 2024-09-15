@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Box, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -32,11 +33,22 @@ const Header = () => {
           </Box>
 
           <Box sx={{ display: "flex", gap: "20px", alignItems: "center" }}>
-            <Typography sx={{ color: "#10B981", cursor: "pointer" }}>
+            <Typography
+              sx={{ color: "#10B981", cursor: "pointer" }}
+              component={Link}
+            >
               Home
             </Typography>
-            <Typography sx={{ cursor: "pointer" }}>About</Typography>
-            <Typography sx={{ cursor: "pointer" }}>OurNewsletter</Typography>
+            <Typography sx={{ cursor: "pointer" }} component={Link} to="about">
+              About
+            </Typography>
+            <Typography
+              sx={{ cursor: "pointer" }}
+              component={Link}
+              to="ourNews"
+            >
+              OurNewsletter
+            </Typography>
           </Box>
         </Box>
       </Box>

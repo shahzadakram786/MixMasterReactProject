@@ -3,8 +3,27 @@
 import { Box } from "@mui/material";
 import Search from "../../components/search/Search";
 import Cards from "../../components/cards/Cards";
+import UserData from "../../components/cards/data";
+
+import { useState } from "react";
 
 const Home = () => {
+  const [inputData, setInputData] = useState("");
+  const [filteredData, setFilteredData] = useState("");
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setFilteredData(inputData);
+  };
+
+  const handleChange = (e) => {
+    setInputData(e.target.value);
+  };
+
+  const filtered = UserData.filter((value) =>
+    value.Name.toLowerCase().includes(filteredData.toLowerCase())
+  );
+
   return (
     <Box
       sx={{
@@ -19,10 +38,10 @@ const Home = () => {
       }}
     >
       <Box sx={{ width: "40%" }}>
-        <Search />
+        <Search handleChange={handleChange} handleClick={handleClick} />
       </Box>
       <Box sx={{ width: "80%" }}>
-        <Cards />
+        <Cards data={filtered} />
       </Box>
     </Box>
   );
